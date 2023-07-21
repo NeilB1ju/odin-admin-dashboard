@@ -1,1 +1,1 @@
-# odin-admin-dashboard
+This is the UI for a admin dashboard made while following the odin project web development course.
