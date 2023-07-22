@@ -1,6 +1,8 @@
 :root{
-    --sidebar:#0284c7;
-    --main-background:#bfdbfe;
+    --sidebar:#DDD6FE;
+    --main-background:#E6E6FA;
+    --header-top: #A5B4FC;
+    --accent-color: #5EEAD4;
 }
 
 *{
@@ -8,30 +10,29 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    color: white;
 }
 
 h1{
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 p{
     font-size: 1.3rem;   
-    font-weight: bold; 
 }
 
 .container{
     width: 100%;
     height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 0.7fr 3fr;
 }
 
 
 /* Styling the sidebar */
 .navbar{
-    width: 18%;
-    min-width: 180px;
+    grid-column: 1;
+    min-width: 200px;
     height: auto;
     background-color: var(--sidebar);
     display: flex;
@@ -43,7 +44,7 @@ p{
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
 }
 
 .nav-item{
@@ -53,18 +54,85 @@ p{
 }
 
 .header-image{
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.7rem;
+    width: 1.7rem;
 }
 
 .nav-item > img{
     width: 1.3rem;
     height: 1.3rem;
-    filter: invert(100%);
-}
-
-img::selection{
-    background-color: #E6962E;
 }
 
 
+
+.main{
+    grid-column: 2;
+    height: auto;
+    display: grid;
+    grid-template-rows: 150px 1fr;
+}
+
+
+
+/* Styling the header */
+.header{
+    min-height: 100px;
+    padding: 20px 60px 10px 30px;
+    background-color: var(--header-top);
+    z-index: 1;
+}
+
+.header-top, .notification, .search, .header-bottom, .greeting, .header-buttons{
+    display: flex;
+}
+
+.header-top, .header-bottom{
+    justify-content: space-between;
+}
+
+.notification, .search, .greeting{
+    align-items: center;
+    gap: 10px;
+}
+
+.header-buttons{
+    align-items: center;
+    gap: 25px;
+}
+
+.header-icon{
+    height: 25px;
+    width: 25px;
+}
+
+input[type="text"]{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #F0FFFF;
+    width: 500px;
+    height: 25px;
+}
+
+.header-bottom{
+    padding-top: 20px;
+}
+
+.profile-image{
+    width: 60px;
+    height: 60px;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 15px;
+    border: 2px solid black;
+    background-color: var(--accent-color);
+}
+
+
+/* Styling the main content of the website */
+.body{
+    background-color: var(--main-background);
+}
