@@ -3,6 +3,8 @@
     --main-background:#E6E6FA;
     --header-top: #A5B4FC;
     --accent-color: #5EEAD4;
+    --project-heading :#6399F7;
+    --project-desc :#808080;
 }
 
 *{
@@ -10,7 +12,7 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
+} 
 
 h1{
     margin: 0;
@@ -25,8 +27,9 @@ p{
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.7fr 3fr;
+    grid-template-columns: 0.7fr minmax(850px,3fr);
 }
+
 
 
 /* Styling the sidebar */
@@ -53,18 +56,19 @@ p{
     align-items: center;
 }
 
-.header-image{
+#header-image{
     height: 1.7rem;
     width: 1.7rem;
 }
 
-.nav-item > img{
+.nav-item > img, .project-icons > img{
     width: 1.3rem;
     height: 1.3rem;
 }
 
 
 
+/* Sectioning the main section of the website */
 .main{
     grid-column: 2;
     height: auto;
@@ -123,8 +127,8 @@ input[type="text"]{
 }
 
 button{
-    width: 100px;
-    height: 30px;
+    width: 110px;
+    height: 35px;
     font-size: 1rem;
     border-radius: 15px;
     border: 2px solid black;
@@ -132,7 +136,129 @@ button{
 }
 
 
+
 /* Styling the main content of the website */
 .body{
     background-color: var(--main-background);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 25px 25px 20px 20px;
+}
+
+
+
+/* Styling the projects section */
+.projects{
+    padding: 10px 10px 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(400px,1fr));
+    grid-template-rows: repeat(3,200px);
+    grid-auto-flow: row;
+    grid-auto-rows: 200px;
+    gap: 15px;
+}
+
+.project-item{
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.accent{
+    background-color: var(--accent-color);
+    border-radius: 10px 0px 0px 10px;
+}
+
+.project-content{
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-heading{
+    color: var(--project-heading)
+}
+
+.project-desc{
+    color: var(--project-desc);
+    font-size: 1rem;
+}
+
+.project-icons{
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+
+/* Styling the announcements and trending sections */
+.sidepanel{
+    padding-left: 5px;
+}
+
+
+/* Announcement Section */
+.announcement-panel{
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: repeat(3,130px);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.announcement-item{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.item-border{
+    border-bottom: 1px solid var(--project-desc);
+}
+
+.announcement-heading, .announcement-desc{
+    font-size: 0.9rem;
+}
+
+.announcement-desc, .trending-desc{
+    color: var(--project-desc);
+}
+
+
+/* Trending Section */
+.trending-section{
+    padding-top: 15px;
+}
+
+.trending-panel{
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: repeat(3,60px);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.trending-item{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+}
+
+.trending-text{
+    padding-top: 5px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
 }
